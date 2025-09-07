@@ -4,15 +4,36 @@
   <meta charset="UTF-8">
   <title>Buscador de Invitados</title>
   <style>
-    body { font-family: sans-serif; padding: 30px; background: #f0f0f0; }
-    input { padding: 10px; width: 300px; }
-    #resultado { margin-top: 20px; font-size: 18px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+    }
+    input {
+      padding: 12px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+    #resultado {
+      margin-top: 30px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
-  <h2>Consulta de invitados</h2>
+  <h2>🎉 Consulta de Invitados</h2>
   <p>Escribe tu nombre y primer apellido para saber tu número de invitados:</p>
-  <input type="text" id="busqueda" placeholder="Ejemplo: María López" />
+  <input type="text" id="busqueda" placeholder="Ejemplo: Juan David Rosero" />
   <div id="resultado"></div>
 
   <script>
@@ -84,7 +105,6 @@
       "Deborah Daniele": 3,
       "Shaun Wiedrick": 2,
       "Thomas Delahanty": 2
-
     };
 
     document.getElementById("busqueda").addEventListener("input", function () {
@@ -95,7 +115,7 @@
       if (nombre === "") {
         resultado.innerHTML = "";
       } else if (cantidad !== undefined) {
-        resultado.innerHTML = `🎉 ¡Hola ${nombre}! Tu invitación es por <strong>${cantidad}</strong> invitado(s).`;
+        resultado.innerHTML = `🎉 ¡Hola <strong>${nombre}</strong>! Puedes llevar <strong>${cantidad}</strong> invitado(s).`;
       } else {
         resultado.innerHTML = "❌ Nombre no encontrado. Verifica la ortografía.";
       }
