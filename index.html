@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscador de Invitados</title>
+  <style>
+    body { font-family: sans-serif; padding: 30px; background: #f0f0f0; }
+    input { padding: 10px; width: 300px; }
+    #resultado { margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <h2>Consulta de invitados</h2>
+  <p>Escribe tu nombre y primer apellido para saber tu número de invitados:</p>
+  <input type="text" id="busqueda" placeholder="Ejemplo: María López" />
+  <div id="resultado"></div>
+
+  <script>
+    const invitados = {
+      "Liz Delahanty": 4,
+      "Carmen Elisa Perea": 1,
+      "Thomas Porch": 1,
+      "Nathaly Rosero": 1,
+      "Olga Peña": 1,
+      "Jose Luis Perea": 2,
+      "Laura Perea": 3,
+      "Melba Lucia Artunduaga": 1,
+      "Alexander Perea": 3,
+      "Juan David Rosero": 6,
+      "Maria Fernanda Perea": 2,
+      "Valentina Florez": 3,
+      "Natalia Florez": 3,
+      "Victor Perea": 2,
+      "William Perea": 3,
+      "Manuela Perea": 1,
+      "Marlon Martinez": 3,
+      "Diana Marcela Medina": 2,
+      "Marisol Martinez": 4,
+      "Elizabeth Rojas": 1,
+      "Maria Nela Rojas": 1,
+      "Angela Maria Rojas": 2,
+      "Luis Telmo Rojas": 2,
+      "Gustavo Adolfo Rojas": 2,
+      "Oscar Fernando Rojas": 2,
+      "Alejandro Rojas": 2,
+      "Andres Buritica": 3,
+      "Tatiana Alvarez": 2,
+      "Nelly Mancera": 1,
+      "Adriana Rosero": 1,
+      "Eucarias Rosero": 1,
+      "Leonardo Rosero": 4,
+      "Alfonso Perdomo": 2,
+      "Lorena Perdomo": 2,
+      "Monica Perdomo": 2,
+      "Diana Maria Rosero": 4,
+      "Carolina Sanchez": 2,
+      "Angela Maria Sanchez": 1,
+      "Leonardo De La Fuente": 2,
+      "Jey De La Fuente": 1,
+      "Erika De La Fuente": 3,
+      "Gildardo De La Fuente": 2,
+      "Maribel Parra": 2,
+      "Jared Perga": 4,
+      "Daniel Bernal": 2,
+      "Diana Beltran": 1,
+      "Mari Luz Reyes": 3,
+      "Nelsy Gonzalez": 1,
+      "Carlos Gonzalez": 1,
+      "Freddy Luna": 2,
+      "Aydee Laspriella": 2,
+      "Janeth Rivera": 1,
+      "Luz Delahanty": 2,
+      "Iabella Rojas": 1,
+      "Juan David Rojas": 2,
+      "Luis Esteban Rojas": 2,
+      "Sebastian Rojas": 1,
+      "Jairo Chitiva": 4,
+      "Rosangela Torres": 3,
+      "Andrea Valencia": 3,
+      "Andres Felipe Castaño": 4,
+      "Nick D'Andola": 4,
+      "Anissa Cummings": 3,
+      "Kate Hunter": 2,
+      "Deborah Daniele": 3,
+      "Shaun Wiedrick": 2,
+      "Thomas Delahanty": 2
+
+    };
+
+    document.getElementById("busqueda").addEventListener("input", function () {
+      const nombre = this.value.trim();
+      const cantidad = invitados[nombre];
+      const resultado = document.getElementById("resultado");
+
+      if (nombre === "") {
+        resultado.innerHTML = "";
+      } else if (cantidad !== undefined) {
+        resultado.innerHTML = `🎉 ¡Hola ${nombre}! Tu invitación es por <strong>${cantidad}</strong> invitado(s).`;
+      } else {
+        resultado.innerHTML = "❌ Nombre no encontrado. Verifica la ortografía.";
+      }
+    });
+  </script>
+</body>
+</html>
